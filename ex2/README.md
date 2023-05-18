@@ -60,6 +60,30 @@ df_test = df_test.drop('workingday',axis = 'columns')
 <br>
 
 ### 코드 작성자가 코드를 제대로 이해하고 작성했나요? (직접 인터뷰해보기)
+```python
+def MSE(a, b):
+    mse = ((a - b) ** 2).mean()  # 두 값의 차이의 제곱의 평균
+    return mse
+def loss(X, W, b, y):
+    predictions = model(X, W, b)
+    L = MSE(predictions, y)
+    return L
+#Gradient
+def gradient(X, W, b, y):
+    # N은 데이터 포인트의 개수
+    N = len(y)
+    
+    # y_pred 준비
+    y_pred = model(X, W, b)
+    
+    # 공식에 맞게 gradient 계산
+    dW = 1/N * 2 * X.T.dot(y_pred - y)
+        
+    # b의 gradient 계산
+    db = 2 * (y_pred - y).mean()
+    return dW, db
+```
+각각의 함수들의 동작방식을 정확하게 설명해주셔서 이해가 더 빨랐습니다!
 
 ### 코드가 간결한가요? (O)
 ```python
