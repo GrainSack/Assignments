@@ -34,8 +34,6 @@ def build_resnet_block(input_layer, num_cnn=3, channel=64, block_num=1,is_50 = F
 ```
   
 
-정리를 통해 결과물을 한번에 확인할 수 있었습니다.
-
 
 
 ## **참고링크 및 코드 개선 여부**  
